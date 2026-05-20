@@ -6,6 +6,9 @@
 # main.py
 # אחריות: תפריט ראשי, קלט מהמשתמש, ניתוב לפונקציות
 # ============================================================================
+# link_to_github = https://github.com/simcha-art/duties_management
+
+
 import soldiers_management
 import duty_management
 
