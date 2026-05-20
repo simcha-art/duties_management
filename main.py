@@ -144,11 +144,6 @@ def handle_update_duty_status() -> None:
     duty_management.update_duty_status(soldier_id, duty_name, new_status)
 
 
-# handle_add_soldier()
-# handle_add_duty()
-# handle_view_soldiers()
-# handle_update_duty_status()
-# handle_view_soldiers()
 
 def handle_view_soldier_duties() -> None:
     """
@@ -161,7 +156,8 @@ def handle_view_soldier_duties() -> None:
     למה הפונקציה קיימת:
     הפרדה בין UI לבין לוגיקה עסקית.
     """
-    pass
+    soldier_id = input("Enter soldeir's ID: ")
+    print(duty_management.get_soldier_duties(soldier_id))
 
 
 def main() -> None:
@@ -175,6 +171,41 @@ def main() -> None:
     למה הפונקציה קיימת:
     נקודת הכניסה לתוכנית. מנהלת את הזרימה הראשית.
     """
-    pass
+    while True:
+        try:
+            show_menu()
+            choice = get_user_choice()
+            if choice == "1":
+                handle_add_soldier()
+                print("operation_completed_successfully")
+            
+            elif choice == "2":
+                handle_remove_soldier()
+                print("operation_completed_successfully")
+
+
+            elif choice == "3":
+                handle_view_soldiers()
+
+            elif choice == "4":
+                handle_add_duty()
+                print("operation_completed_successfully")
+
+
+            elif choice == "5":
+                handle_update_duty_status()
+                print("operation_completed_successfully")
+
+            elif choice == "6":
+                handle_view_soldier_duties()
+
+            elif choice == "7":
+                break
+        except (KeyError, ValueError) as e:
+            print(e)
+
+if __name__ == "__main__":
+    main()
+
 
 
