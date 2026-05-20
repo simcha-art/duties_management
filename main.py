@@ -6,6 +6,10 @@
 # main.py
 # אחריות: תפריט ראשי, קלט מהמשתמש, ניתוב לפונקציות
 # ============================================================================
+import soldiers_management
+
+
+
 
 def show_menu() -> None:
     """
@@ -45,8 +49,8 @@ def get_user_choice() -> str:
     choice = input("Enter your choice (1-6): ")
     return choice
 
-show_menu()
-print(get_user_choice())
+# show_menu()
+# print(get_user_choice())
 
 
 def handle_add_soldier() -> None:
@@ -62,7 +66,10 @@ def handle_add_soldier() -> None:
     main.py אחראי על אינטראקציה עם המשתמש,
     soldier_manager.py אחראי על הלוגיקה.
     """
-    pass
+    name = input("Enter soldier's name: ")
+    id = input("Enter soldier's ID: ")
+
+    soldiers_management.add_soldier(id, name)
 
 
 def handle_remove_soldier() -> None:
@@ -76,7 +83,14 @@ def handle_remove_soldier() -> None:
     למה הפונקציה קיימת:
     הפרדה בין UI לבין לוגיקה עסקית.
     """
-    pass
+    id = input("Enter soldier's ID: ")
+    soldiers_management.remove_soldier(id)
+
+# handle_add_soldier()
+# print(soldiers_management.get_all_soldiers())
+
+# handle_remove_soldier()
+# print(soldiers_management.get_all_soldiers())
 
 
 def handle_view_soldiers() -> None:
