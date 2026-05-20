@@ -88,10 +88,7 @@ def handle_remove_soldier() -> None:
     id = input("Enter soldier's ID: ")
     soldiers_management.remove_soldier(id)
 
-# handle_add_soldier()
-# print(soldiers_management.get_all_soldiers())
 
-# handle_remove_soldier()
 
 
 def handle_view_soldiers() -> None:
@@ -106,8 +103,6 @@ def handle_view_soldiers() -> None:
     הפרדה בין קבלת הנתונים לבין הצגתם.
     """
     print(soldiers_management.get_all_soldiers())
-
-# handle_view_soldiers()
 
 
 def handle_add_duty() -> None:
@@ -142,8 +137,18 @@ def handle_update_duty_status() -> None:
     למה הפונקציה קיימת:
     הפרדה בין UI לבין לוגיקה עסקית.
     """
-    pass
+    soldier_id = input("Enter soldier's ID: ")
+    duty_name = input("Enter duty's name: ")
+    new_status = input("Enter the new status: ")
 
+    duty_management.update_duty_status(soldier_id, duty_name, new_status)
+
+
+# handle_add_soldier()
+# handle_add_duty()
+# handle_view_soldiers()
+# handle_update_duty_status()
+# handle_view_soldiers()
 
 def handle_view_soldier_duties() -> None:
     """
