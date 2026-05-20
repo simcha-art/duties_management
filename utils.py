@@ -104,12 +104,12 @@ def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
     
     זורקת: כלום - תמיד מחזירה bool
     
-    למה הפונקציה קיימת:
-    בדיקה זו משמשת בהוספת תורנות (למנוע כפילויות).
-    הפרדה של הלוגיקה למקום אחד.
-    פונקציות validation מחזירות bool ולא זורקות exceptions.
     """
-    pass
+    duties = soldier["duties"]
+    for duty in duties:
+        if duty["name"] == duty_name:
+            return True
+    return False
 
 
 def is_valid_day(day: str) -> bool:
