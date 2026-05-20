@@ -44,15 +44,14 @@ def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
     זורקת: כלום - מחזירה None במקרה שלא נמצא
     
     """
-    is_find = False
     for duty in duties:
         if duty["name"] == duty_name:
-            is_find = True
-    return is_find
+            return duty
+    return
 
 def is_valid_status(status: str) -> bool:
     """
-    בודקת אם סטטוס הוא חוקי.
+    בודקת אם סטטוס הוא חוקי
     
     סוג: פונקציית validation (בדיקת תקינות)
     
