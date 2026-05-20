@@ -35,7 +35,6 @@ def add_soldier(soldier_id: str, name: str) -> None:
     
     data.soldiers.append({"name": name, "id": soldier_id, "duties": []})
 
-add_soldier("878", "Yossi")
 
 
 def remove_soldier(soldier_id: str) -> None:
@@ -58,7 +57,12 @@ def remove_soldier(soldier_id: str) -> None:
     מבצעת בדיקת קיום ומסירה מהנתונים.
     זורקת exception במקרה שהחייל לא קיים.
     """
-    pass
+    soldier = utils.find_soldier_by_id(soldier_id)
+    if not soldier :
+        raise KeyError ("Soldier with this id does not exist")
+    data.soldiers.remove(soldier)
+
+
 
 
 def get_all_soldiers() -> list:
@@ -79,5 +83,6 @@ def get_all_soldiers() -> list:
     גישה לנתונים בצורה מבוקרת.
     מאפשר לקבל את הנתונים מבלי לגשת ישירות למשתנה הגלובלי.
     """
-    pass
+    return data.soldiers.copy()
+
 
