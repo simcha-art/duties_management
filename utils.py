@@ -65,7 +65,9 @@ def is_valid_status(status: str) -> bool:
     זורקת: כלום - תמיד מחזירה bool
     
     """
-    pass
+
+    VALID_STATUS = ("pending","completed","missed")
+    return status in VALID_STATUS
 
 def is_valid_name(name: str) -> bool:
     """
@@ -82,14 +84,9 @@ def is_valid_name(name: str) -> bool:
     
     זורקת: כלום - תמיד מחזירה bool
     
-    למה הפונקציה קיימת:
-    בדיקת תקינות של שם משמשת במספר מקומות.
-    הפרדה של לוגיקת הבדיקה למקום אחד.
-    בעתיד אפשר להוסיף בדיקות נוספות (אורך מינימלי, תווים חוקיים).
-    פונקציות validation מחזירות bool ולא זורקות exceptions.
     """
-    pass
-
+    name = name.strip()
+    return bool(name)
 
 def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
     """
