@@ -21,11 +21,10 @@ def find_soldier_by_id(soldier_id: str) -> dict | None:
     זורקת: כלום - מחזירה None במקרה שלא נמצא
     
     """
-    is_find = False
-    for sold in data.soldiers:
-        if sold["id"] == soldier_id:
-            is_find = True
-    return is_find
+    for soldier in data.soldiers:
+        if soldier["id"] == soldier_id:
+            return soldier
+    return
 
 
 def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
