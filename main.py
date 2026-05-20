@@ -7,6 +7,7 @@
 # אחריות: תפריט ראשי, קלט מהמשתמש, ניתוב לפונקציות
 # ============================================================================
 import soldiers_management
+import duty_management
 
 
 
@@ -31,6 +32,7 @@ Options:
 4. add duty
 5. update duty status
 6. view_soldier_duties
+7.exit
 """
     print(message)
 
@@ -46,7 +48,7 @@ def get_user_choice() -> str:
     הפרדת קבלת קלט מהמשתמש מהלוגיקה של עיבוד הבחירה.
     מאפשר להחליף את שיטת הקלט בעתיד (למשל, GUI).
     """
-    choice = input("Enter your choice (1-6): ")
+    choice = input("Enter your choice (1-7): ")
     return choice
 
 # show_menu()
@@ -86,7 +88,7 @@ def handle_remove_soldier() -> None:
     id = input("Enter soldier's ID: ")
     soldiers_management.remove_soldier(id)
 
-handle_add_soldier()
+# handle_add_soldier()
 # print(soldiers_management.get_all_soldiers())
 
 # handle_remove_soldier()
@@ -105,7 +107,7 @@ def handle_view_soldiers() -> None:
     """
     print(soldiers_management.get_all_soldiers())
 
-handle_view_soldiers()
+# handle_view_soldiers()
 
 
 def handle_add_duty() -> None:
@@ -119,7 +121,14 @@ def handle_add_duty() -> None:
     למה הפונקציה קיימת:
     הפרדה בין UI לבין לוגיקה עסקית.
     """
-    pass
+    id_soldier = input("Enter soldier's ID: ")
+    duty_name = input("Enter duty name: ")
+    day = input("Enter the day of the duty: ")
+    
+    duty_management.add_duty_to_soldier(id_soldier, duty_name, day)
+
+
+
 
 
 def handle_update_duty_status() -> None:
