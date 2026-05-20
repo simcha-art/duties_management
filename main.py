@@ -86,11 +86,10 @@ def handle_remove_soldier() -> None:
     id = input("Enter soldier's ID: ")
     soldiers_management.remove_soldier(id)
 
-# handle_add_soldier()
+handle_add_soldier()
 # print(soldiers_management.get_all_soldiers())
 
 # handle_remove_soldier()
-# print(soldiers_management.get_all_soldiers())
 
 
 def handle_view_soldiers() -> None:
@@ -104,7 +103,9 @@ def handle_view_soldiers() -> None:
     למה הפונקציה קיימת:
     הפרדה בין קבלת הנתונים לבין הצגתם.
     """
-    pass
+    print(soldiers_management.get_all_soldiers())
+
+handle_view_soldiers()
 
 
 def handle_add_duty() -> None:
