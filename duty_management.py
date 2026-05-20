@@ -84,13 +84,6 @@ def update_duty_status(soldier_id: str, duty_name: str, new_status: str) -> None
     
     duty["status"] = new_status
 
-# sm.add_soldier("878", "Yossi")
-
-# add_duty_to_soldier("878", "wash", "sunday")
-# add_duty_to_soldier("878", "guard", "sunday")
-# update_duty_status("878", "wash", "completed")
-
-# print(sm.get_all_soldiers())
 
 
 def get_soldier_duties(soldier_id: str) -> list:
@@ -114,6 +107,9 @@ def get_soldier_duties(soldier_id: str) -> list:
     מפרידה בין הנתונים לבין הגישה אליהם.
     זורקת exception אם החייל לא קיים (במקום להחזיר רשימה ריקה).
     """
-    pass
-
+    soldier = utils.find_soldier_by_id(soldier_id)
+    if not soldier:
+        raise KeyError ("soldier with this id does not exist in system")
+    
+    return soldier["duties"].copy()
 
